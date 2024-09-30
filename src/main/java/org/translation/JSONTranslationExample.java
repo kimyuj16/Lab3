@@ -38,9 +38,7 @@ public class JSONTranslationExample {
      */
     public String getCanadaCountryNameSpanishTranslation() {
 
-        private static final int canadaIndex = 30;
-
-        JSONObject canada = jsonArray.getJSONObject(canadaIndex);
+        JSONObject canada = jsonArray.getJSONObject(CANADA_INDEX);
         return canada.getString("es");
     }
 
