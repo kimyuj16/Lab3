@@ -13,8 +13,8 @@ import java.util.Map;
  */
 public class CountryCodeConverter {
 
-    private static final Map<String, String> codeToCountryMap = new HashMap<>();
-    private static final Map<String, String> countryToCodeMap = new HashMap<>();
+    private static final Map<String, String> CODE_TO_COUNTRY_MAP = new HashMap<>();
+    private static final Map<String, String> COUNTRY_TO_CODE_MAP = new HashMap<>();
 
     /**
      * Default constructor which will load the country codes from "country-codes.txt"
@@ -44,8 +44,8 @@ public class CountryCodeConverter {
                 String countryName = parts[0];
                 String alpha3Code = parts[2].toLowerCase();
 
-                codeToCountryMap.put(alpha3Code, countryName);
-                countryToCodeMap.put(countryName, alpha3Code);
+                CODE_TO_COUNTRY_MAP.put(alpha3Code, countryName);
+                COUNTRY_TO_CODE_MAP.put(countryName, alpha3Code);
             }
 
         }
@@ -61,7 +61,7 @@ public class CountryCodeConverter {
      * @return the name of the country corresponding to the code
      */
     public static String fromCountryCode(String code) {
-        return codeToCountryMap.get(code);
+        return CODE_TO_COUNTRY_MAP.get(code);
     }
 
     /**
@@ -70,7 +70,7 @@ public class CountryCodeConverter {
      * @return the 3-letter code of the country
      */
     public static String fromCountry(String country) {
-        return countryToCodeMap.get(country);
+        return COUNTRY_TO_CODE_MAP.get(country);
     }
 
     /**
@@ -78,6 +78,6 @@ public class CountryCodeConverter {
      * @return how many countries are included in this code converter.
      */
     public int getNumCountries() {
-        return codeToCountryMap.size();
+        return CODE_TO_COUNTRY_MAP.size();
     }
 }
