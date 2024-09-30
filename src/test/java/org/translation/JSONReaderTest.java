@@ -1,6 +1,7 @@
 package org.translation;
 
 import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,23 +15,22 @@ public class JSONReaderTest {
     }
 
     @Test
-    public void testGetCountryNameTranslationUSA_EN() {
+    public void testGetCountryNameTranslationUsaEn() {
         String result = jsonTranslationExample.getCountryNameTranslation("usa", "en");
         assertEquals("United States of America", result);
     }
 
     @Test
-    public void testGetCountryNameTranslationFRA_FR() {
+    public void testGetCountryNameTranslationFraFr() {
         String result = jsonTranslationExample.getCountryNameTranslation("fra", "fr");
         assertEquals("France", result);
     }
 
     @Test
-    public void testGetCountryNameTranslationDEU_DE() {
+    public void testGetCountryNameTranslationDeuDe() {
         String result = jsonTranslationExample.getCountryNameTranslation("deu", "de");
         assertEquals("Deutschland", result);
     }
-
 
     @Test
     public void testGetCountryNameTranslationInvalidCountry() {

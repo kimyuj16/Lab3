@@ -1,9 +1,9 @@
 package org.translation;
 
+import static org.junit.Assert.assertEquals;
+
 import org.json.JSONArray;
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
 
 public class JSONDemoTest {
 

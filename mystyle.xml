@@ -55,7 +55,6 @@
 
     <!-- Headers -->
 
-
     <!-- Miscellaneous -->
     <module name="NewlineAtEndOfFile"/>
     <module name="Translation">

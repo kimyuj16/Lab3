@@ -1,13 +1,13 @@
 package org.translation;
 
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 public class LanguageCodeConverterTest {
 
     @Test
-    public void fromLanguageCodeEN() {
+    public void fromLanguageCodeEn() {
         LanguageCodeConverter converter = new LanguageCodeConverter();
         assertEquals("English", converter.fromLanguageCode("en"));
     }
