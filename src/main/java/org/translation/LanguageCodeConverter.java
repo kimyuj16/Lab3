@@ -14,8 +14,8 @@ import java.util.Map;
  */
 public class LanguageCodeConverter {
 
-    private final Map<String, String> codeToLanguageMap = new HashMap<>();
-    private final Map<String, String> languageToCodeMap = new HashMap<>();
+    private static final Map<String, String> codeToLanguageMap = new HashMap<>();
+    private static final Map<String, String> languageToCodeMap = new HashMap<>();
 
     /**
      * Default constructor which will load the language codes from "language-codes.txt"
@@ -66,7 +66,7 @@ public class LanguageCodeConverter {
      * @param code the language code
      * @return the name of the language corresponding to the code
      */
-    public String fromLanguageCode(String code) {
+    public static String fromLanguageCode(String code) {
         return codeToLanguageMap.get(code);
     }
 
@@ -75,7 +75,7 @@ public class LanguageCodeConverter {
      * @param language the name of the language
      * @return the 2-letter code of the language
      */
-    public String fromLanguage(String language) {
+    public static String fromLanguage(String language) {
         return languageToCodeMap.get(language);
     }
 
