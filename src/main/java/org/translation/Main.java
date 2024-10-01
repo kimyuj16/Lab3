@@ -104,7 +104,7 @@ public class Main {
             System.out.println(language);
         }
 
-        System.out.println("Select a language from above:");
+        System.out.println("select a language from above:");
 
         Scanner s = new Scanner(System.in);
         return s.nextLine();
