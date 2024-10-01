@@ -1,5 +1,6 @@
 package org.translation;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
@@ -42,16 +43,18 @@ public class Main {
                 break;
             }
 
-            String countryCode = CountryCodeConverter.fromCountry(country);
+            CountryCodeConverter countryConverter = new CountryCodeConverter();
+            String countryCode = countryConverter.fromCountry(country);
 
-            String language = promptForLanguage(translator, country);
+            String language = promptForLanguage(translator, countryCode);
             if (QUIT_COMMAND.equals(language)) {
                 break;
             }
 
-            String languageCode = LanguageCodeConverter.fromLanguage(language);
+            LanguageCodeConverter languageConverter = new LanguageCodeConverter();
+            String languageCode = languageConverter.fromLanguage(language);
 
-            System.out.println(country + " in " + language + " is " + translator.translate(country, language));
+            System.out.println(country + " in " + language + " is " + translator.translate(countryCode, languageCode));
             System.out.println("Press enter to continue or quit to exit.");
             Scanner s = new Scanner(System.in);
             String textTyped = s.nextLine();
@@ -65,13 +68,16 @@ public class Main {
     private static String promptForCountry(Translator translator) {
         List<String> countries = translator.getCountries();
 
-        for (int i = 0; i < countries.size(); i++) {
-            countries.set(i, CountryCodeConverter.fromCountryCode(countries.get(i)));
+        List<String> countryNames = new ArrayList<>();
+        CountryCodeConverter countryConverter = new CountryCodeConverter();
+
+        for (String countryCode : countries) {
+            countryNames.add(countryConverter.fromCountryCode(countryCode));
         }
 
-        Collections.sort(countries);
+        Collections.sort(countryNames);
 
-        for (String country : countries) {
+        for (String country : countryNames) {
             System.out.println(country);
         }
 
@@ -85,13 +91,16 @@ public class Main {
     private static String promptForLanguage(Translator translator, String country) {
         List<String> languages = translator.getCountryLanguages(country);
 
-        for (int i = 0; i < languages.size(); i++) {
-            languages.set(i, LanguageCodeConverter.fromLanguageCode(languages.get(i)));
+        List<String> languageNames = new ArrayList<>();
+        LanguageCodeConverter languageConverter = new LanguageCodeConverter();
+
+        for (String languageCode:languages) {
+            languageNames.add(languageConverter.fromLanguageCode(languageCode));
         }
 
-        Collections.sort(languages);
+        Collections.sort(languageNames);
 
-        for (String language : languages) {
+        for (String language : languageNames) {
             System.out.println(language);
         }
 

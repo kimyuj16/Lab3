@@ -60,7 +60,7 @@ public class CountryCodeConverter {
      * @param code the 3-letter code of the country
      * @return the name of the country corresponding to the code
      */
-    public static String fromCountryCode(String code) {
+    public String fromCountryCode(String code) {
         return CODE_TO_COUNTRY_MAP.get(code);
     }
 
@@ -69,7 +69,7 @@ public class CountryCodeConverter {
      * @param country the name of the country
      * @return the 3-letter code of the country
      */
-    public static String fromCountry(String country) {
+    public String fromCountry(String country) {
         return COUNTRY_TO_CODE_MAP.get(country);
     }
 

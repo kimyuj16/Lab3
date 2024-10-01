@@ -66,7 +66,7 @@ public class LanguageCodeConverter {
      * @param code the language code
      * @return the name of the language corresponding to the code
      */
-    public static String fromLanguageCode(String code) {
+    public String fromLanguageCode(String code) {
         return CODE_TO_LANGUAGE_MAP.get(code);
     }
 
@@ -75,7 +75,7 @@ public class LanguageCodeConverter {
      * @param language the name of the language
      * @return the 2-letter code of the language
      */
-    public static String fromLanguage(String language) {
+    public String fromLanguage(String language) {
         return LANGUAGE_TO_CODE_MAP.get(language);
     }
 
